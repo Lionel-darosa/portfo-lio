@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,8 +24,8 @@ class Message
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $sendDate = null;
+    #[ORM\Column(type: "datetime", options:["default" => "CURRENT_TIMESTAMP"], nullable: true)]
+    private DateTime $sendDate;
 
     public function getId(): ?int
     {
@@ -67,12 +68,12 @@ class Message
         return $this;
     }
 
-    public function getSendDate(): ?\DateTimeInterface
+    public function getSendDate(): DateTime
     {
         return $this->sendDate;
     }
 
-    public function setSendDate(\DateTimeInterface $sendDate): static
+    public function setSendDate(DateTime $sendDate): self
     {
         $this->sendDate = $sendDate;
 

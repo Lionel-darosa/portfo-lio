@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+    
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">{{ field_label(form.name) }}</label>
+            <input type="text" class="form-control" id="input-name" name="{{ field_name(form.name) }}" value="{{ field_value(form.name) }}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">{{ field_label(form.presentation) }}</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="{{ field_name(form.presentation) }}" value="{{ field_value(form.presentation) }}"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">{{ field_label(form.link) }}</label>
+            <input type="text" class="form-control" id="input-name" name="{{ field_name(form.link) }}" value="{{ field_value(form.link) }}">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">{{ field_label(form.github) }}</label>
+            <input type="text" class="form-control" id="input-name" name="{{ field_name(form.github) }}" value="{{ field_value(form.github) }}">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">{{ field_label(form.video) }}</label>
+            <input type="text" class="form-control" id="input-name" name="{{ field_name(form.video) }}" value="{{ field_value(form.video) }}">
+        </div>
+        {{ form_row(form.pictureFile) }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{{ form_end(form) }}
