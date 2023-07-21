@@ -21,7 +21,7 @@ security:
                 check_path: app_login
             logout:
                 path: app_logout
-                target: message_index
+                target: home_index
         secrured_area:
             form_login:
                 enable_csrf: true
