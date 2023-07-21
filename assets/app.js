@@ -7,5 +7,8 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
+import "bootswatch/dist/lux/bootstrap.min.css";
 import './styles/app.scss';
 import './bootstrap.js';
+
+require('bootstrap');
